@@ -2,18 +2,20 @@ using UnityEngine;
 
 public abstract class InteractiveObject : MonoBehaviour, IExecute
 {
-    private bool _isInteractable = true;
+    
     protected abstract void Interaction();
+    protected abstract void SecondInteraction();
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_isInteractable || !other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            return;
+            Interaction();
+        }else if (other.CompareTag("PlacePlayer"))
+        {
+            SecondInteraction();
         }
-        Interaction();
-        _isInteractable = false;
     }
     public abstract void Execute();
 

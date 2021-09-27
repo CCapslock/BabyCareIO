@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -8,14 +6,20 @@ public class GameController : MonoBehaviour
     private Joystick _joystick;
     [SerializeField]
     private PlayerBaby _baby;
+    [SerializeField]
+    private Transform _camera;
     private ListExecuteObject _interactiveObject;
     private PlayerController _inputController;
-    
+    private CameraController _cameraController;
+
     private void Awake()
     {
         _interactiveObject = new ListExecuteObject();
+
         _inputController = new PlayerController(_baby,_joystick);
         _interactiveObject.AddExecuteObject(_inputController);
+        _cameraController = new CameraController(_baby.transform, _camera);
+        _interactiveObject.AddExecuteObject(_cameraController);
     }
 
     private void FixedUpdate()
