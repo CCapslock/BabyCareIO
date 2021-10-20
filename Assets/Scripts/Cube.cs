@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 public class Cube : InteractiveObject
 {
@@ -8,7 +9,10 @@ public class Cube : InteractiveObject
     private GameObject _playerBaby;
     private GameObject _cubes;
     private bool isCube = false;
-    private  float _timeFlyCubes = 0.1f;
+    private  float _speedFlyCube = 0.02f;
+    
+
+
 
     private void Awake()
     {
@@ -16,10 +20,17 @@ public class Cube : InteractiveObject
         PlaceCastle.AddRange(GameObject.FindGameObjectsWithTag("PlaceCastle"));
         _playerBaby = GameObject.Find("ToonBabyA (2)");
         _cubes = GameObject.Find("PlaceCastle");
+        
+
+
     }
     public override void Execute()
     {
-        MoveCubes();
+        if (isCube == true)
+        {
+            MoveCubes();
+        }
+       
     }
 
     protected override void Interaction()
@@ -30,6 +41,7 @@ public class Cube : InteractiveObject
         CastleCube.AddRange(GameObject.FindGameObjectsWithTag("Cube"));
         gameObject.transform.SetParent(_playerBaby.transform);
         gameObject.transform.position = PlaceCube[PlayerBase._countCube].transform.position;
+        Debug.Log(CastleCube.Count);
     }
 
     protected override void SecondInteraction()
@@ -38,18 +50,21 @@ public class Cube : InteractiveObject
         PlayerBase._countCube = 0;
         gameObject.transform.SetParent(_cubes.transform);
         transform.rotation = Quaternion.Euler(0,0,0);
-       
-    }
-    private void MoveCubes()
-    {
-        if (isCube)
-        {
-            for (int i = 0; i < CastleCube.Count; i++)
-            {
-                CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube[i].transform.position,
-                    PlaceCastle[i].transform.position, _timeFlyCubes);
+        
 
-            }
+    }
+    private   void MoveCubes()
+    {
+        for (int i = 0; i < CastleCube.Count; i++)
+        {
+            CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube [i].transform.position,
+               PlaceCastle[i].transform.position, _speedFlyCube);
+            if (CastleCube[CastleCube.IndexOf(gameObject)].transform.position == PlaceCastle[CastleCube.IndexOf(gameObject)].transform.position)
+            {
+                
+                Debug.Log(CastleCube.Count);
+                isCube = false;
+            }  
         }
     }
 }

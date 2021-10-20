@@ -9,6 +9,7 @@ TagManager:
   - PlacePlayer
   - PlaceCube
   - PlaceCastle
+  - FirstPlaseCastle
   layers:
   - Default
   - TransparentFX
