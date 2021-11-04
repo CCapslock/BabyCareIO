@@ -62,9 +62,7 @@ public class Cube : InteractiveObject
         CastleCube.AddRange(GameObject.FindGameObjectsWithTag("Cube"));
         gameObject.transform.SetParent(_playerBaby.transform);
         gameObject.transform.position = PlaceCube[PlayerBase._countCube].transform.position;
-        Debug.Log($"Count = {CastleCube.Count}");
-        Debug.Log($"LastindexOf = {CastleCube.LastIndexOf(gameObject)}");
-        Debug.Log($"PlaceCastle = {PlaceCastle.Count}");
+        
     }
 
     protected override void SecondInteraction() // Игрок принес кубик на свое место
@@ -77,19 +75,21 @@ public class Cube : InteractiveObject
 
     protected override void ThirdInteraction() // Первый бот подбирает кубик
     {
+        EnemyBabyBot._freeCubes.Remove(EnemyBabyBot._closest);
         transform.rotation = _babyBot.transform.rotation;
-        PlayerBase._counCubeBot++;
+        EnemyBabyBotBase._countCubesBot++;
         gameObject.transform.tag = "CubeFirstBot";
         CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
         gameObject.transform.SetParent(_babyBot.transform);
-        gameObject.transform.position = PlaceCubeBot[PlayerBase._counCubeBot].transform.position;
+        gameObject.transform.position = PlaceCubeBot[EnemyBabyBotBase._countCubesBot].transform.position;
         
     }
 
     protected override void FourthInteraction() // Первый бот принес кубик насвое место
     {
         isCubeBot = true;
-        PlayerBase._counCubeBot = 0;
+        EnemyBabyBotBase._goBuildCastle = false;
+        EnemyBabyBotBase._countCubesBot = 0;
         gameObject.transform.SetParent(_cubesBot1.transform);
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }

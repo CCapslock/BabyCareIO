@@ -16,6 +16,7 @@ TagManager:
   - PlaceCubeFirstBot
   - CubeFirstBot
   - FreeCube
+  - BotTarget
   layers:
   - Default
   - TransparentFX

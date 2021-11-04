@@ -3,38 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBabyBot : EnemyBabyBotBase
-{
-    private List<GameObject> _freeCubes = new List<GameObject>();
-    private GameObject _closest;
-    float _distance = Mathf.Infinity;
+{   
+    public static  List<GameObject> _freeCubes = new List<GameObject>();
+    public static GameObject _closest;
+    float min;
+    [SerializeField]
+    private GameObject _bottarget;
+
 
 
     private void Awake()
     {
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
+       
+        
+    }
+    public override void MoveBot()
+    {
+        if (!_goBuildCastle)
+        {
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
+                        FindClosestCube().transform.position, _speed);
+
+        }
+
+        if (_countCubesBot>=3)
+        {
+            _goBuildCastle = true;
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
+                         _bottarget.transform.position, _speed);
+        }
+            
+        
+        
     }
 
     public override GameObject FindClosestCube()
     {
-   
-        foreach (var item in _freeCubes)
+        min = 10000f;
+        for (int i = 0; i < _freeCubes.Count; i++)
         {
-            Vector3 diff = item.transform.position - transform.position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance<_distance)
+            if (min > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
             {
-                _closest = item;
-                _distance = curDistance;
+                min = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
+                _closest = _freeCubes[i];
             }
         }
         return _closest;
-    }
-    public override void MoveBot()
-    {
-        if (_distance!=1)
-        {
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, FindClosestCube().transform.position, _speed);
-        }_freeCubes.Remove(_closest);
-            
     }
 }
