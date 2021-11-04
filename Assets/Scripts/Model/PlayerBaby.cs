@@ -4,9 +4,10 @@ public class PlayerBaby : PlayerBase
 {
     private Rigidbody _rigidbodyBaby;
     private Animator _babyAnim;
-  
     [SerializeField]
     private Joystick _joystick;
+    
+
 
     private void Awake()
     {
@@ -34,4 +35,5 @@ public class PlayerBaby : PlayerBase
             transform.rotation = Quaternion.LookRotation(_rigidbodyBaby.velocity);
         }
     }
+    
 }

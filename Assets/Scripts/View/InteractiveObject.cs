@@ -2,18 +2,40 @@ using UnityEngine;
 
 public abstract class InteractiveObject : MonoBehaviour, IExecute
 {
-    private bool _isInteractable = true;
+    public static bool isInteraction = true;
+    public static bool isThirdInteraction = true;
+    
     protected abstract void Interaction();
-
+    protected abstract void SecondInteraction();
+    protected abstract void ThirdInteraction();
+    protected abstract void FourthInteraction();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!_isInteractable || !other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            return;
+            if (!isInteraction)
+            {
+                return;
+            }
+            Interaction();
+
+        } else if (other.CompareTag("PlacePlayer"))
+        {
+            SecondInteraction();
         }
-        Interaction();
-        _isInteractable = false;
+        else if (other.CompareTag("FirstEnemyBabyBot"))
+        {
+            if (!isThirdInteraction)
+            {
+                return;
+            }
+            ThirdInteraction();
+        }
+        else if (other.CompareTag("PlaceFirstBot"))
+        {
+            FourthInteraction();
+        }
     }
     public abstract void Execute();
 
