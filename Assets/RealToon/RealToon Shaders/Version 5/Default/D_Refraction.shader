@@ -1277,15 +1277,12 @@ Shader "RealToon/Version 5/Default/Refraction" {
 					#if !defined(UNITY_HALF_PRECISION_FRAGMENT_SHADER_REGISTERS)
 					#define DLCOO(input, worldPos) unityShadowCoord3 lightCoord = mul(unity_WorldToLight, unityShadowCoord4(worldPos, 1)).xyz
 				#else
-					#define DLCOO(input, worldPos) unityShadowCoord3 lightCoord = i._LightCoord
+					#define DLCOO(input, worldPos) unityShadowCoord3 lightCoord = input._LightCoord
 				#endif
 					DLCOO(i, i.posWorld.xyz);
 					lightfo = tex2D(_LightTextureB0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL * texCUBE(_LightTexture0, lightCoord).w;
 				#else
 					lightfo;
-				#endif
-				#ifdef DIRECTIONAL
-					lightfo = UNITY_SHADOW_ATTENUATION(i, i.posWorld.xyz);
 				#endif
 				#ifdef DIRECTIONAL_COOKIE
 					#if !defined(UNITY_HALF_PRECISION_FRAGMENT_SHADER_REGISTERS)
@@ -1303,7 +1300,7 @@ Shader "RealToon/Version 5/Default/Refraction" {
 					#define DLCOO(input, worldPos) unityShadowCoord4 lightCoord = input._LightCoord
 				#endif
 					DLCOO(i, i.posWorld.xyz);
-					lightfo = (lightCoord.z > 0) * tex2D(_LightTexture0, lightCoord.xy / lightCoord.w + 0.5).w * tex2D(_LightTextureB0, dot(lightCoord, lightCoord).xx).UNITY_ATTEN_CHANNEL;
+					lightfo = (lightCoord.z > 0) * UnitySpotCookie(lightCoord) * UnitySpotAttenuate(lightCoord);
 				#else
 					lightfo;
 				#endif
