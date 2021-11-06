@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +9,6 @@ public class EnemyBabyBot : EnemyBabyBotBase
     [SerializeField]
     private GameObject _bottarget;
 
-
-
     private void Awake()
     {
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
@@ -20,25 +17,23 @@ public class EnemyBabyBot : EnemyBabyBotBase
     }
     public override void MoveBot()
     {
-        if (_closest == null)
-        {
-            FindClosestCube();
-        }
-        if (!_goBuildCastle)
+          FindClosestCube();
+        
+        if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
                         FindClosestCube().transform.position, _speed);
 
         }
-
-        if (_countCubesBot >= 4 || _freeCubes.Count<=0)
+        if (_countCubesBot >=6 || _freeCubes.Count<=0)
         {
             _goBuildCastle = true;
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
                          _bottarget.transform.position, _speed);
         }
+       
+        
     }
-
     public override GameObject FindClosestCube()
     {
 
@@ -54,11 +49,9 @@ public class EnemyBabyBot : EnemyBabyBotBase
                 {
                     min = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
                     _closest = _freeCubes[i];
+
                 }
             }
-
-
-        
         return _closest;
     }
 }

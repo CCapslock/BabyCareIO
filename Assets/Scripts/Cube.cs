@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 public class Cube : InteractiveObject
 {
@@ -56,8 +55,9 @@ public class Cube : InteractiveObject
         if (EnemyBabyBotBase._countCubesInCastel == PlaceCastleBot.Count)
         {
             EnemyBabyBot._freeCubes.Clear();
+            
         }
-
+       
     }
     protected override void Interaction() //Игрок подбирает кубик
     {
@@ -68,7 +68,7 @@ public class Cube : InteractiveObject
         else
         {
             _playerHaveCube = true;
-            EnemyBabyBot._freeCubes.Remove(EnemyBabyBot._closest);
+            EnemyBabyBot._freeCubes.Remove(gameObject);
             EnemyBabyBot._closest = null;
             transform.rotation = _playerBaby.transform.rotation;
             PlayerBase._countCube++;
@@ -76,6 +76,11 @@ public class Cube : InteractiveObject
             CastleCube.AddRange(GameObject.FindGameObjectsWithTag("Cube"));
             gameObject.transform.SetParent(_playerBaby.transform);
             gameObject.transform.position = PlaceCube[PlayerBase._countCube].transform.position;
+            if (EnemyBabyBot._freeCubes.Contains(EnemyBabyBot._closest))
+            {
+                Debug.Log("True");
+            }
+            Debug.Log("False");
         }
         
         
@@ -105,6 +110,7 @@ public class Cube : InteractiveObject
         }
         else
         {
+            
             _botHaveCube = true;
             EnemyBabyBot._freeCubes.Remove(EnemyBabyBot._closest);
             transform.rotation = _babyBot.transform.rotation;
@@ -113,7 +119,8 @@ public class Cube : InteractiveObject
             CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
             gameObject.transform.SetParent(_babyBot.transform);
             gameObject.transform.position = PlaceCubeBot[EnemyBabyBotBase._countCubesBot].transform.position;
-            Debug.Log(EnemyBabyBot._closest);
+            EnemyBabyBotBase._countCubesInCastel++;
+            //Debug.Log(EnemyBabyBot._closest);
         }
         
         
@@ -123,9 +130,7 @@ public class Cube : InteractiveObject
     {
         isCubeBot = true;
         EnemyBabyBotBase._goBuildCastle = false;
-        EnemyBabyBotBase._countCubesInCastel = EnemyBabyBotBase._countCubesInCastel +
-            EnemyBabyBotBase._countCubesBot;
-        EnemyBabyBotBase._countCubesBot = 0;
+        EnemyBabyBotBase._countCubesBot = 0;  
         gameObject.transform.SetParent(_cubesBot1.transform);
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
@@ -137,8 +142,6 @@ public class Cube : InteractiveObject
                PlaceCastle[i].transform.position, _speedFlyCube);
             if (CastleCube[CastleCube.IndexOf(gameObject)].transform.position == PlaceCastle[CastleCube.IndexOf(gameObject)].transform.position)
             {
-                
-                Debug.Log(CastleCube.Count);
                 isCube = false;
             }  
         }
