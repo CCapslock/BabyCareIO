@@ -1,16 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerBaby : PlayerBase
 {
     private Rigidbody _rigidbodyBaby;
     private Animator _babyAnim;
+    private CapsuleCollider _collider;
     [SerializeField]
     private Joystick _joystick;
     
 
-
     private void Awake()
     {
+        _collider = GetComponent<CapsuleCollider>();
         _rigidbodyBaby = GetComponent<Rigidbody>();
         _babyAnim = GetComponent<Animator>();
     }
@@ -20,12 +22,21 @@ public class PlayerBaby : PlayerBase
     }
     public override void BabyAnim()
     {
-        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        if (!isCry)
         {
-            _babyAnim.SetBool("Walk", true);
+            _babyAnim.SetBool("Cry", false);
+            if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+            {
+                _babyAnim.SetBool("Walk", true);
+            }
+            if (_joystick.Horizontal == 0 || _joystick.Vertical == 0)
+                _babyAnim.SetBool("Walk", false);
         }
-        if (_joystick.Horizontal == 0 || _joystick.Vertical == 0)
+        else
+        {
             _babyAnim.SetBool("Walk", false);
+            _babyAnim.SetBool("Cry",true);
+        }
     }
 
     public override void RotationMove()
@@ -35,5 +46,21 @@ public class PlayerBaby : PlayerBase
             transform.rotation = Quaternion.LookRotation(_rigidbodyBaby.velocity);
         }
     }
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FirstEnemyBabyBot"))
+        {
+            StartCoroutine(TimeCry());
+        }
+    }
+    private IEnumerator TimeCry()
+    {
+        isCry = true;
+        _collider.isTrigger = false;
+        Debug.Log("Cry");
+        yield return new WaitForSeconds(3);
+        isCry = false;
+        yield return new WaitForSeconds(3);
+        _collider.isTrigger = true;
+    }
 }

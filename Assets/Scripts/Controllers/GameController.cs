@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     private PlayerController _playerController;
     private CameraController _cameraController;
     private EnemyBabyBotController _botController;
+    
+    
     private void Awake()
     {
         _interactiveObject = new ListExecuteObject();
@@ -23,6 +25,8 @@ public class GameController : MonoBehaviour
         _interactiveObject.AddExecuteObject(_cameraController);
         _botController = new EnemyBabyBotController(_babyBot);
         _interactiveObject.AddExecuteObject(_botController);
+        
+        
     }
 
     private void FixedUpdate()

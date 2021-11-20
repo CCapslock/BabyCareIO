@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using UnityEngine;
 public class Cube : InteractiveObject
 {
@@ -16,9 +16,9 @@ public class Cube : InteractiveObject
     private bool isCubeBot = false;
     private bool _botHaveCube = false;
     private bool _playerHaveCube = false;
-    private  float _speedFlyCube = 0.02f;
-    
-    
+    private float _speedFlyCube = 0.02f;
+
+
 
 
 
@@ -32,7 +32,7 @@ public class Cube : InteractiveObject
         _babyBot = GameObject.Find("ToonBabyABot1");
         _cubes = GameObject.Find("PlaceCastle");
         _cubesBot1 = GameObject.Find("PlaceCastleBot1");
-       
+
     }
     public override void Execute()
     {
@@ -55,11 +55,11 @@ public class Cube : InteractiveObject
         if (EnemyBabyBotBase._countCubesInCastel == PlaceCastleBot.Count)
         {
             EnemyBabyBot._freeCubes.Clear();
-            
+
         }
-       
+
     }
-    protected override void Interaction() //Игрок подбирает кубик
+    protected override void Interaction()
     {
         if (_botHaveCube)
         {
@@ -82,11 +82,11 @@ public class Cube : InteractiveObject
             }
             Debug.Log("False");
         }
-        
-        
+
+
     }
 
-    protected override void SecondInteraction() // Игрок принес кубик на свое место
+    protected override void SecondInteraction()
     {
         if (_botHaveCube)
         {
@@ -99,10 +99,10 @@ public class Cube : InteractiveObject
             gameObject.transform.SetParent(_cubes.transform);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        
+
     }
 
-    protected override void ThirdInteraction() // Первый бот подбирает кубик
+    protected override void ThirdInteraction()
     {
         if (_playerHaveCube)
         {
@@ -110,7 +110,7 @@ public class Cube : InteractiveObject
         }
         else
         {
-            
+
             _botHaveCube = true;
             EnemyBabyBot._freeCubes.Remove(EnemyBabyBot._closest);
             transform.rotation = _babyBot.transform.rotation;
@@ -120,36 +120,36 @@ public class Cube : InteractiveObject
             gameObject.transform.SetParent(_babyBot.transform);
             gameObject.transform.position = PlaceCubeBot[EnemyBabyBotBase._countCubesBot].transform.position;
             EnemyBabyBotBase._countCubesInCastel++;
-            //Debug.Log(EnemyBabyBot._closest);
+          
         }
-        
-        
+
+
     }
 
-    protected override void FourthInteraction() // Первый бот принес кубик насвое место
+    protected override void FourthInteraction() 
     {
         isCubeBot = true;
         EnemyBabyBotBase._goBuildCastle = false;
-        EnemyBabyBotBase._countCubesBot = 0;  
+        EnemyBabyBotBase._countCubesBot = 0;
         gameObject.transform.SetParent(_cubesBot1.transform);
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
-    private   void MoveCubesPlayer()
+    private void MoveCubesPlayer()
     {
         for (int i = 0; i < CastleCube.Count; i++)
         {
-            CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube [i].transform.position,
+            CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube[i].transform.position,
                PlaceCastle[i].transform.position, _speedFlyCube);
             if (CastleCube[CastleCube.IndexOf(gameObject)].transform.position == PlaceCastle[CastleCube.IndexOf(gameObject)].transform.position)
             {
                 isCube = false;
-            }  
+            }
         }
     }
 
     private void MoveCubesFirstBot()
     {
-        for(int i = 0; i < CastleCubeBot.Count; i++)
+        for (int i = 0; i < CastleCubeBot.Count; i++)
         {
             CastleCubeBot[i].transform.position = Vector3.MoveTowards(CastleCubeBot[i].transform.position,
                PlaceCastleBot[i].transform.position, _speedFlyCube);
@@ -160,5 +160,3 @@ public class Cube : InteractiveObject
         }
     }
 }
-    
-    
