@@ -60,7 +60,7 @@ public class PlayerBaby : PlayerBase
         Debug.Log("Cry");
         yield return new WaitForSeconds(3);
         isCry = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
         _collider.isTrigger = true;
     }
 }

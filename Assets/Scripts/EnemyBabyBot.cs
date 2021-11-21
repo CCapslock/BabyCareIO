@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyBabyBot : EnemyBabyBotBase
 {
     public static List<GameObject> _freeCubes = new List<GameObject>();
-    public static GameObject _closest;
+    public  GameObject _closest;
     private Rigidbody _rigibodyBot;
     private CapsuleCollider _botCollider;
     private Animator _botAnim;
     private float _timeCry = 3;
+    public bool _testFlag;
     float min;
     [SerializeField]
     private GameObject _bottarget;
@@ -23,31 +24,32 @@ public class EnemyBabyBot : EnemyBabyBotBase
     }
     public override void MoveBot()
     {
-        
-        if (!isCryBot)
+        if (_testFlag)
         {
-            FindClosestCube();
-            if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
+            if (!isCryBot)
             {
-                transform.position = Vector3.MoveTowards(this.transform.position,
-                            FindClosestCube().transform.position, _speed);
-                RotateCubes();
-
+                FindClosestCube();
+                if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
+                {   
+                        transform.position = Vector3.MoveTowards(this.transform.position,
+                                    FindClosestCube().transform.position, _speed);
+                        RotateCubes();
+                }
+                if (_countCubesBot >= 6 || _freeCubes.Count <= 0)
+                {
+                    _goBuildCastle = true;
+                    gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
+                                 _bottarget.transform.position, _speed);
+                    RotateBotTarget();
+                }
             }
-            if (_countCubesBot >= 6 || _freeCubes.Count <= 0)
+            else
             {
-                _goBuildCastle = true;
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
-                             _bottarget.transform.position, _speed);
-                RotateBotTarget();
+                _rigibodyBot.velocity = new Vector3(0, 0, 0);
             }
-        }
-        else
-        {
-            _rigibodyBot.velocity = new Vector3(0,0,0);
-        }
 
-        AnimBot();
+            AnimBot();
+        }
     }
     private void AnimBot()
     {
@@ -83,7 +85,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
         Debug.Log("BotCry");
         yield return new WaitForSeconds(_timeCry);
         isCryBot = false;
-        yield return new WaitForSeconds(_timeCry);
+        yield return new WaitForSeconds(0.5f);
         _botCollider.isTrigger = true;
     }
     private void RotateBotTarget()

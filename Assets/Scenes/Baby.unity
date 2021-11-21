@@ -3740,7 +3740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0fb09f78de852847b96a0ff2e7f744a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 7.46
   _joystick: {fileID: 979519106}
 --- !u!54 &514013159
 Rigidbody:
@@ -5590,6 +5590,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6635f8b2636770e41864430947b6398d, type: 3}
+--- !u!1 &805452714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805452715}
+  m_Layer: 0
+  m_Name: Cubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &805452715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805452714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 514013157}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807231554
 GameObject:
   m_ObjectHideFlags: 0
@@ -10031,7 +10061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8328a87be709c459723036ddf94c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.03
+  _speed: 0.02
+  _closest: {fileID: 0}
+  _testFlag: 1
   _bottarget: {fileID: 449800049}
 --- !u!4 &1362559417 stripped
 Transform:
@@ -12145,7 +12177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607558731}
   m_Layer: 0
-  m_Name: PlaceFreeCubes
+  m_Name: FreeCubes
   m_TagString: PlaceFreeCubes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12159,7 +12191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607558730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: 0.5058218, z: 5.77}
+  m_LocalPosition: {x: 5.12, y: 0.5058218, z: 10.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1936035847}

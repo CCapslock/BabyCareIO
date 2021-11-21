@@ -19,6 +19,7 @@ TagManager:
   - BotTarget
   - PlaceFreeCubes
   - CubeInCastle
+  - CastleCubePlayer
   layers:
   - Default
   - TransparentFX
