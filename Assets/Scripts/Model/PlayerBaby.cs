@@ -48,7 +48,7 @@ public class PlayerBaby : PlayerBase
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FirstEnemyBabyBot"))
+        if (other.CompareTag("FirstEnemyBabyBot")|| other.CompareTag("SecondEnemyBabyBot"))
         {
             StartCoroutine(TimeCry());
         }

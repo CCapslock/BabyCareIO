@@ -22,6 +22,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
             MoveBot();
             AnimBot();
         }
+        Debug.Log("++");
     }
     public override void MoveBot()
     {
@@ -68,7 +69,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
     }
     public override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")|| other.CompareTag("SecondEnemyBabyBot"))
         {
             StartCoroutine(TimeCryBot());
         }
@@ -96,7 +97,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
     public override GameObject FindClosestCube()
     {
 
-        if (_freeCubes.Count <= 0 || _goBotTarget)
+        if ( _goBotTarget)
         {
             _closest = _bottarget;
 
@@ -117,5 +118,8 @@ public class EnemyBabyBot : EnemyBabyBotBase
         return _closest;
     }
 
-    
+    public override void SecondExecute()
+    {
+        
+    }
 }

@@ -10,6 +10,7 @@ public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
     public static int _countCubesBot;
     public static int _countCubesSecondBot;
     public static bool _goBotTarget = false;
+    public static bool _goBotTargetSecondBot = false;
     public static bool _goBuildCastle = false;
     public static bool _goBuildCastleSecondBot = false;
     public float _minDistance;
@@ -17,9 +18,10 @@ public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
     public CapsuleCollider _botCollider;
     public Animator _botAnim;
     public static GameObject _closest;
+    public static GameObject _seccondClosest;
 
     public static List<GameObject> _freeCubes = new List<GameObject>();
-    public static List<GameObject> _freeCubesSecondBot = new List<GameObject>();
+    
 
 
     public GameObject _bottarget;
@@ -38,7 +40,9 @@ public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
     public abstract void RotateCubes();
 
     public abstract void Execute();
+    public abstract void SecondExecute();
     
+
 }
 
 

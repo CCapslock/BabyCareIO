@@ -20,6 +20,11 @@ TagManager:
   - PlaceFreeCubes
   - CubeInCastle
   - CastleCubePlayer
+  - SecondEnemyBabyBot
+  - PlaceCubeSecondBot
+  - PlaceSecondBot
+  - PlaceCastleSecondBot
+  - CubeSecondBot
   layers:
   - Default
   - TransparentFX

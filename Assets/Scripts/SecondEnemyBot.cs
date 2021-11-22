@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SecondEnemyBot : EnemyBabyBotBase
 {
-    public static GameObject _seccondClosest;
+    
     [SerializeField]
     private bool _testFlag;
 
@@ -12,48 +12,54 @@ public class SecondEnemyBot : EnemyBabyBotBase
         _botCollider = GetComponent<CapsuleCollider>();
         _rigibodyBot = GetComponent<Rigidbody>();
         _botAnim = GetComponent<Animator>();
-        _freeCubesSecondBot.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
+        _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
     }
 
-    public override void Execute()
+    public override void SecondExecute()
     {
-        MoveBot();
+        if (_testFlag)
+        {
+            MoveBot();
+            AnimBot();
+           
+        }
+        
+
     }
 
     public override GameObject FindClosestCube()
     {
-        if (_freeCubesSecondBot.Count <= 0 || _goBotTarget)
+        if (_goBotTargetSecondBot)
         {
             _seccondClosest = _bottarget;
 
         }
         _minDistance = 10000f;
-        for (int i = 0; i < _freeCubesSecondBot.Count; i++)
+        for (int i = 0; i < _freeCubes.Count; i++)
         {
-            if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubesSecondBot[i].transform.position))
+            if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
             {
-                _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubesSecondBot[i].transform.position);
-                _seccondClosest = _freeCubesSecondBot[i];
-
+                _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
+                _seccondClosest = _freeCubes[i];
             }
         }
-        return _closest;
+        return _seccondClosest;
     }
 
     public override void MoveBot()
     {
-        if (!_isCryBot)
+        if (!_isCrySecondBot)
         {
             FindClosestCube();
-            if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
+            if (!_goBuildCastleSecondBot && _freeCubes.Contains(_seccondClosest) == true)
             {
                 transform.position = Vector3.MoveTowards(this.transform.position,
-                            _closest.transform.position, _speed);
+                            _seccondClosest.transform.position, _speed);
                 RotateCubes();
             }
-            if (_countCubesBot >= 6 || _freeCubes.Count <= 0)
+            if (_countCubesSecondBot >= 6 || _freeCubes.Count <= 0)
             {
-                _goBuildCastle = true;
+                _goBuildCastleSecondBot = true;
                 gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
                              _bottarget.transform.position, _speed);
                 RotateBotTarget();
@@ -67,26 +73,48 @@ public class SecondEnemyBot : EnemyBabyBotBase
 
     public override void AnimBot()
     {
-        throw new System.NotImplementedException();
+        if (!_isCrySecondBot)
+        {
+            _botAnim.SetBool("Walk", true);
+        }
+        else
+        {
+            _botAnim.SetBool("Walk", false);
+            _botAnim.SetBool("Cry", true);
+        }
     }
 
     public override void OnTriggerEnter(Collider other)
     {
-        throw new System.NotImplementedException();
+        if (other.CompareTag("Player")|| other.CompareTag("FirstEnemyBabyBot"))
+        {
+            StartCoroutine(TimeCryBot());
+        }
     }
 
     public override void RotateBotTarget()
     {
-        throw new System.NotImplementedException();
+        transform.LookAt(_bottarget.transform.position);
     }
-
     public override void RotateCubes()
     {
-        throw new System.NotImplementedException();
+        transform.LookAt(_seccondClosest.transform.position);
     }
 
     public override IEnumerator TimeCryBot()
     {
-        throw new System.NotImplementedException();
+        _isCrySecondBot = true;
+        _botCollider.isTrigger = false;
+        _goBuildCastleSecondBot = false;
+        Debug.Log("BotCry");
+        yield return new WaitForSeconds(_timeCry);
+        _isCrySecondBot = false;
+        yield return new WaitForSeconds(0.5f);
+        _botCollider.isTrigger = true;
+    }
+
+    public override void Execute()
+    {
+        
     }
 }

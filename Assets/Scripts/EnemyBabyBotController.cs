@@ -1,6 +1,7 @@
 public class EnemyBabyBotController : IExecute
 {
     private readonly EnemyBabyBotBase _enemybase;
+    
 
     public EnemyBabyBotController(EnemyBabyBotBase enemy)
     {
