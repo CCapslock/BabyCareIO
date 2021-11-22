@@ -5825,7 +5825,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8411417885137914667, guid: 6635f8b2636770e41864430947b6398d, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8411417885137914670, guid: 6635f8b2636770e41864430947b6398d, type: 3}
       propertyPath: m_RootOrder
@@ -8311,6 +8311,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1145843492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145843493}
+  m_Layer: 0
+  m_Name: CubesBot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145843493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145843492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1362559417}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146374011
 GameObject:
   m_ObjectHideFlags: 0
@@ -10062,9 +10092,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.02
-  _closest: {fileID: 0}
-  _testFlag: 1
+  _minDistance: 0
+  _rigibodyBot: {fileID: 0}
+  _botCollider: {fileID: 0}
+  _botAnim: {fileID: 0}
   _bottarget: {fileID: 449800049}
+  _timeCry: 3
+  _testFlag: 0
 --- !u!4 &1362559417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456090, guid: 5c2ffe283ffbac04b8162a740dbbace6, type: 3}

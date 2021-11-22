@@ -8,7 +8,7 @@ public class EnemyBabyBotController : IExecute
     }
     public void Execute()
     {
-        _enemybase.MoveBot();
+        _enemybase.Execute();
     }
 
     
