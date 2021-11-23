@@ -22,7 +22,6 @@ public class EnemyBabyBot : EnemyBabyBotBase
             MoveBot();
             AnimBot();
         }
-        Debug.Log("++");
     }
     public override void MoveBot()
     {
@@ -35,7 +34,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
                                     _closest.transform.position, _speed);
                         RotateCubes();
                 }
-                if (_countCubesBot >= 6 || _freeCubes.Count <= 0)
+                if (_countCubesBot >= 6 || _goBotTarget)
                 {
                     _goBuildCastle = true;
                     gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
@@ -60,10 +59,9 @@ public class EnemyBabyBot : EnemyBabyBotBase
             _botAnim.SetBool("Cry", true);
         }
         
-       
-        if (_freeCubes.Count <= 0 && this.transform.position == _bottarget.transform.position)
+        if (_goBotTarget && transform.position == _bottarget.transform.position)
         {
-            this.transform.Rotate(Vector3.up);
+            transform.Rotate(Vector3.up);
             _botAnim.SetBool("Clap", true);
         }
     }

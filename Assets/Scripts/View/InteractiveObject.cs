@@ -48,7 +48,6 @@ public abstract class InteractiveObject : MonoBehaviour, IExecute
             SecondBotTakesCube();
         } else if (other.CompareTag("PlaceSecondBot"))
         {
-            Debug.Log("PlaceSecondBot");
             SecondBotBuildCastle();
         }
     }

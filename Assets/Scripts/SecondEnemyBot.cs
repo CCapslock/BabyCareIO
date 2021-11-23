@@ -23,8 +23,6 @@ public class SecondEnemyBot : EnemyBabyBotBase
             AnimBot();
            
         }
-        
-
     }
 
     public override GameObject FindClosestCube()
@@ -57,7 +55,7 @@ public class SecondEnemyBot : EnemyBabyBotBase
                             _seccondClosest.transform.position, _speed);
                 RotateCubes();
             }
-            if (_countCubesSecondBot >= 6 || _freeCubes.Count <= 0)
+            if (_countCubesSecondBot >= 6 ||_goBotTargetSecondBot)
             {
                 _goBuildCastleSecondBot = true;
                 gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
@@ -81,6 +79,12 @@ public class SecondEnemyBot : EnemyBabyBotBase
         {
             _botAnim.SetBool("Walk", false);
             _botAnim.SetBool("Cry", true);
+        }
+
+        if (_goBotTargetSecondBot && transform.position == _bottarget.transform.position)
+        {
+            this.transform.Rotate(Vector3.up);
+            _botAnim.SetBool("Clap", true);
         }
     }
 
