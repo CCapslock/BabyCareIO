@@ -178,7 +178,6 @@ public class Cube : InteractiveObject
             EnemyBabyBotBase._countCubesBot++;
             gameObject.transform.tag = "CubeFirstBot";
             CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
-            CubeScatterBot.Reverse();
             gameObject.transform.SetParent(_babyBot.transform);
             transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             for (int i = 0; i < _babyBot.transform.childCount; i++)
@@ -200,12 +199,12 @@ public class Cube : InteractiveObject
             _isCubeBot = true;
             EnemyBabyBotBase._goBuildCastle = false;
             EnemyBabyBotBase._countCubesBot = 0;
-            transform.rotation = Quaternion.Euler(0,0,0);
             for (int i = 0; i < CubeScatterBot.Count; i++)
             {
                 CubeScatterBot[i].transform.SetParent(_cubesFirstBot.transform);
                 EnemyBabyBotBase._freeCubes.Remove(CubeScatterBot[i]);
             }
+            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             CubeScatterBot.Clear();
             EnemyBabyBotBase._freeCubes.Clear();
             EnemyBabyBotBase._freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
