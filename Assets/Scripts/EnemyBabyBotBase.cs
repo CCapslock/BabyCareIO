@@ -10,6 +10,8 @@ public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
     public static int _countCubesBot;
     public static int _countCubesSecondBot;
     public static bool _goBotTarget = false;
+    public static bool _castleBuilt = false;
+    public static bool _castleBuiltSecondBot = false;
     public static bool _goBotTargetSecondBot = false;
     public static bool _goBuildCastle = false;
     public static bool _goBuildCastleSecondBot = false;

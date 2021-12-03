@@ -1,18 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SecondEnemyBot : EnemyBabyBotBase
 {
     
     [SerializeField]
     private bool _testFlag;
-
+    private NavMeshAgent _agent;
     public override void Awake()
     {
         _botCollider = GetComponent<CapsuleCollider>();
         _rigibodyBot = GetComponent<Rigidbody>();
         _botAnim = GetComponent<Animator>();
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     public override void SecondExecute()
@@ -48,24 +50,23 @@ public class SecondEnemyBot : EnemyBabyBotBase
     {
         if (!_isCrySecondBot)
         {
+            _agent.isStopped = false;
             FindClosestCube();
             if (!_goBuildCastleSecondBot && _freeCubes.Contains(_seccondClosest) == true)
             {
-                transform.position = Vector3.MoveTowards(this.transform.position,
-                            _seccondClosest.transform.position, _speed);
+                _agent.destination = _seccondClosest.transform.position;
                 RotateCubes();
             }
             if (_countCubesSecondBot >= 6 ||_goBotTargetSecondBot)
             {
                 _goBuildCastleSecondBot = true;
-                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
-                             _bottarget.transform.position, _speed);
+                _agent.destination = _bottarget.transform.position;
                 RotateBotTarget();
             }
         }
         else
         {
-            _rigibodyBot.velocity = new Vector3(0, 0, 0);
+            _agent.isStopped = true;
         }
     }
 
@@ -81,10 +82,11 @@ public class SecondEnemyBot : EnemyBabyBotBase
             _botAnim.SetBool("Cry", true);
         }
 
-        if (_goBotTargetSecondBot && transform.position == _bottarget.transform.position)
+        if (_goBotTargetSecondBot && _castleBuiltSecondBot)
         {
-            this.transform.Rotate(Vector3.up);
+            transform.Rotate(Vector3.up);
             _botAnim.SetBool("Clap", true);
+            _agent.isStopped = true;
         }
     }
 
@@ -110,7 +112,6 @@ public class SecondEnemyBot : EnemyBabyBotBase
         _isCrySecondBot = true;
         _botCollider.isTrigger = false;
         _goBuildCastleSecondBot = false;
-        Debug.Log("BotCry");
         yield return new WaitForSeconds(_timeCry);
         _isCrySecondBot = false;
         yield return new WaitForSeconds(0.5f);

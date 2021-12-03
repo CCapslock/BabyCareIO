@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBabyBot : EnemyBabyBotBase
 {
     
     [SerializeField]
     private bool _testFlag;
+    private NavMeshAgent _agent;
     
     public override void Awake()
     {
@@ -13,6 +15,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
         _rigibodyBot = GetComponent<Rigidbody>();
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
         _botAnim = GetComponent<Animator>();
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     public override void Execute()
@@ -20,32 +23,33 @@ public class EnemyBabyBot : EnemyBabyBotBase
         if (_testFlag)
         {
             MoveBot();
+
             AnimBot();
         }
+        
     }
     public override void MoveBot()
     {
-            if (!_isCryBot)
+        if (!_isCryBot)
+        {
+            _agent.isStopped = false;
+            FindClosestCube();
+            if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
             {
-                FindClosestCube();
-                if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
-                {   
-                        transform.position = Vector3.MoveTowards(this.transform.position,
-                                    _closest.transform.position, _speed);
-                        RotateCubes();
-                }
-                if (_countCubesBot >= 6 || _goBotTarget)
-                {
-                    _goBuildCastle = true;
-                    gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
-                                 _bottarget.transform.position, _speed);
-                    RotateBotTarget();
-                }
+                _agent.destination = _closest.transform.position;
+                RotateCubes();
             }
-            else
+            if (_countCubesBot >= 6 || _goBotTarget)
             {
-                _rigibodyBot.velocity = new Vector3(0, 0, 0);
+                _goBuildCastle = true;
+                _agent.destination = _bottarget.transform.position;
+                RotateBotTarget();
             }
+        }
+        else
+        {
+            _agent.isStopped = true;
+        }
     }
     public override void AnimBot()
     {
@@ -59,10 +63,11 @@ public class EnemyBabyBot : EnemyBabyBotBase
             _botAnim.SetBool("Cry", true);
         }
         
-        if (_goBotTarget && transform.position == _bottarget.transform.position)
+        if (_goBotTarget && _castleBuilt)
         {
-            transform.Rotate(Vector3.up);
+             transform.Rotate(Vector3.up);
             _botAnim.SetBool("Clap", true);
+            _agent.isStopped = true;
         }
     }
     public override void OnTriggerEnter(Collider other)

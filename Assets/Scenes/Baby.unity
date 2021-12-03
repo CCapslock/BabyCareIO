@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 64b6fb45d8138d6428b158fd5c84d011, type: 2}
 --- !u!4 &353141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8411417885137914670, guid: 6635f8b2636770e41864430947b6398d, type: 3}
@@ -323,7 +323,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34030489}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21000016, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44653413}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -353,9 +353,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44653412}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.2500007, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.720688, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 12
@@ -1256,7 +1256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149371703}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1269,9 +1269,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149371702}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.73000145, y: 0.766, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1728857, y: 7.6600003, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 33
@@ -1503,7 +1503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 159412596}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1516,9 +1516,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159412595}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.9900007, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9467862, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 18
@@ -2027,7 +2027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 334068735}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &247443105 stripped
 Transform:
@@ -2044,7 +2044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249290003}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2057,9 +2057,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249290002}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.60000134, y: 0.89599997, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7859325, y: 8.959999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 35
@@ -2825,14 +2825,13 @@ GameObject:
   - component: {fileID: 334068735}
   - component: {fileID: 334068734}
   - component: {fileID: 334068733}
-  - component: {fileID: 334068732}
   - component: {fileID: 334068731}
   m_Layer: 6
   m_Name: PlaceSecondBot
   m_TagString: PlaceSecondBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &334068731
 BoxCollider:
@@ -2847,20 +2846,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 78.00496, z: 10.044832}
   m_Center: {x: 0, y: 39.010567, z: -0.022416187}
---- !u!64 &334068732
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334068730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &334068733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2918,9 +2903,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334068730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.41, y: -0, z: 10.8868}
+  m_LocalPosition: {x: 4.41, y: 0.07, z: 10.34}
   m_LocalScale: {x: 0.33595958, y: 0.1, z: 0.17735}
   m_Children:
+  - {fileID: 2125240296}
   - {fileID: 968770298}
   - {fileID: 240908052}
   m_Father: {fileID: 0}
@@ -2976,7 +2962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352352880}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2989,9 +2975,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352352879}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.6000006, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7859311, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 7
@@ -3051,7 +3037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395826242}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3064,9 +3050,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395826241}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.1200011, y: 0.376, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.3337379, y: 3.7599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 24
@@ -3094,7 +3080,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409806628}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.47000146, y: 0.766, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -3154,7 +3140,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415851758}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3800008, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -3219,7 +3205,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440257820}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1200006, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -3254,7 +3240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1144322277}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &454212074 stripped
 Transform:
@@ -3407,7 +3393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 480048173}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3420,9 +3406,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480048172}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.9900017, y: 0.506, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9467876, y: 5.06, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 29
@@ -3757,7 +3743,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520814655}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1200011, y: 0.376, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -4045,7 +4031,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573615666}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.34000134, y: 0.636, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -4380,7 +4366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615280421}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4393,9 +4379,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615280420}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.8600018, y: 0.636, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5598373, y: 6.36, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 32
@@ -4425,7 +4411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634001796}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4438,9 +4424,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634001795}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.2500007, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.720688, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 20
@@ -4473,7 +4459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662168118}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21000099, y: 0.506, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5017,7 +5003,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726536572}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08000064, y: 0.376, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5125,7 +5111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740909511}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5138,9 +5124,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740909510}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.47000098, y: 0.506, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3989809, y: 5.06, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 26
@@ -5216,7 +5202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745979372}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5229,9 +5215,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745979371}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.1200006, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.3337364, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 8
@@ -5307,7 +5293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778400575}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5320,9 +5306,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778400574}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.5100012, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.494592, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 13
@@ -5350,7 +5336,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778985627}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8600018, y: 0.636, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5647,7 +5633,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854718775}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.34000015, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5868,7 +5854,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864686383}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73000145, y: 0.506, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5885,7 +5871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865653964}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5898,9 +5884,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865653963}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.730001, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1728842, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 19
@@ -5915,7 +5901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870000875}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5928,9 +5914,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870000874}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.47000074, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3989794, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 17
@@ -5958,7 +5944,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871892116}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.5100012, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -5975,7 +5961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875466324}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5988,9 +5974,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875466323}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.86000085, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5598345, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 9
@@ -6272,8 +6258,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919098186}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.7793808, y: 0.77, z: 1.4840698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.96, y: 0.77, z: 6.58}
   m_LocalScale: {x: 2.9765487, y: 10, z: 5.6385674}
   m_Children:
   - {fileID: 1953674876}
@@ -6541,9 +6527,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968770297}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.7793808, y: 0.77, z: 1.4840698}
-  m_LocalScale: {x: 2.9765487, y: 10, z: 5.6385674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.88, y: 0.77, z: 6.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1979983354}
   - {fileID: 2038260879}
@@ -6582,7 +6568,7 @@ Transform:
   - {fileID: 995651850}
   - {fileID: 249290003}
   m_Father: {fileID: 334068735}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975764790
 GameObject:
@@ -6601,8 +6587,8 @@ GameObject:
   m_Name: PlacePlayer
   m_TagString: PlacePlayer
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &975764791
 BoxCollider:
@@ -6688,7 +6674,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975764790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26020002, y: 0, z: 10.8868}
+  m_LocalPosition: {x: -0.26020002, y: 0.07, z: 10.34}
   m_LocalScale: {x: 0.33595958, y: 0.1, z: 0.17735}
   m_Children:
   - {fileID: 919098187}
@@ -6886,7 +6872,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983286863}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.60000134, y: 0.89599997, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -7086,7 +7072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995651850}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7099,9 +7085,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995651849}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.47000146, y: 0.766, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3989823, y: 7.6600003, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 34
@@ -7207,7 +7193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1015055630}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -7220,9 +7206,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015055629}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.08000064, y: 0.376, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23812592, y: 3.7599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 22
@@ -7311,7 +7297,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021419667}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21000028, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -8151,7 +8137,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137213728}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2500007, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -8181,7 +8167,7 @@ GameObject:
   m_TagString: PlaceFirstBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1144322273
 BoxCollider:
@@ -8267,9 +8253,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144322272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.77, y: 0, z: 10.8868}
+  m_LocalPosition: {x: -4.77, y: 0.07, z: 10.34}
   m_LocalScale: {x: 0.33595958, y: 0.1, z: 0.17735}
   m_Children:
+  - {fileID: 1485186275}
   - {fileID: 1960825110}
   - {fileID: 449800050}
   m_Father: {fileID: 0}
@@ -8298,7 +8285,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146374011}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73000145, y: 0.766, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -8393,7 +8380,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176943760}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.08000028, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -8420,7 +8407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214360419}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8433,9 +8420,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214360418}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.17999983, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5357789, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 2
@@ -8763,13 +8750,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254490174}
-  m_LocalRotation: {x: 0.15190291, y: -0, z: -0, w: 0.98839545}
-  m_LocalPosition: {x: -0.08999952, y: 2.72, z: 2.16}
+  m_LocalRotation: {x: 0.5758663, y: -0, z: -0, w: 0.81754386}
+  m_LocalPosition: {x: -0.02, y: 4.14, z: 5.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.474, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.321, y: 0, z: 0}
 --- !u!1001 &1261884351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8854,7 +8841,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265278890}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.47000098, y: 0.506, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -8945,7 +8932,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272452819}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9900007, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -9351,7 +9338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297931315}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4700005, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -9533,7 +9520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327089360}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9546,9 +9533,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327089359}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.73000145, y: 0.506, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1728857, y: 5.06, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 28
@@ -9619,6 +9606,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6635f8b2636770e41864430947b6398d, type: 3}
+--- !u!1 &1335459355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1903331720052332542, guid: c564bbc399ad3d3409d65fa37b80af34, type: 3}
+  m_PrefabInstance: {fileID: 1903331719418232850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1335459360
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335459355}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.16
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 80
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.6
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &1341903122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8411417885137914670, guid: 6635f8b2636770e41864430947b6398d, type: 3}
@@ -9634,7 +9648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345123576}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9647,9 +9661,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345123575}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.60000134, y: 0.636, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7859325, y: 6.36, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 30
@@ -9677,7 +9691,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349222114}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9900017, y: 0.506, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -9785,7 +9799,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1903331718058688938, guid: c564bbc399ad3d3409d65fa37b80af34, type: 3}
   m_PrefabInstance: {fileID: 1903331719418232850}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1335459355}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e8328a87be709c459723036ddf94c35, type: 3}
@@ -9811,7 +9825,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367076990}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -9824,9 +9838,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367076989}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.99000096, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.9467862, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 11
@@ -9836,6 +9850,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8411417885137914670, guid: 6635f8b2636770e41864430947b6398d, type: 3}
   m_PrefabInstance: {fileID: 481813275}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1371225993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2880293086975848310, guid: 33ba4c1f60c91074287f97dff21d2124, type: 3}
+  m_PrefabInstance: {fileID: 2880293085510587163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1371225997
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371225993}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.16
+  m_Speed: 1
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 80
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.61
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1372828515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10157,7 +10198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436501005}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.47000074, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -10558,7 +10599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462174405}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10571,9 +10612,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462174404}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.08000028, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23812449, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 6
@@ -10631,7 +10672,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465651005}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.73000073, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -10648,7 +10689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1472179515}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10661,9 +10702,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472179514}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.21000016, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6250762, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 3
@@ -10738,7 +10779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482688576}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -10751,12 +10792,42 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482688575}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.6000011, y: 0.376, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7859325, y: 3.7599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1485186274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1485186275}
+  m_Layer: 0
+  m_Name: BotCube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1485186275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485186274}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -1.7793801, y: 0.77, z: 1.4840698}
+  m_LocalScale: {x: 2.9765487, y: 10, z: 5.638567}
+  m_Children: []
+  m_Father: {fileID: 1144322277}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1485400517
 PrefabInstance:
@@ -11437,7 +11508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1577447398}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11450,9 +11521,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577447397}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.049999714, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.14882576, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 16
@@ -11662,7 +11733,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596097480}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.86000085, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -11947,7 +12018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607558730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: 0.5058218, z: 10.27}
+  m_LocalPosition: {x: 5.989685, y: 0.5758216, z: 9.203651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1936035847}
@@ -12243,7 +12314,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621427629}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.049999714, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -12273,7 +12344,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641066082}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.730001, y: 0.24599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -12356,7 +12427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651131100}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -12369,9 +12440,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651131099}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.8600013, y: 0.376, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.559836, y: 3.7599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 25
@@ -12819,7 +12890,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739497717}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6000006, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -12854,7 +12925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751545963}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.049999714, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -13366,7 +13437,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800929088}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.34000063, y: 0.376, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -13462,7 +13533,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806025960}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.99000096, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -13479,7 +13550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807833446}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13492,9 +13563,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807833445}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.34000063, y: 0.376, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0120277, y: 3.7599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 21
@@ -13711,7 +13782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1865054752}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13724,9 +13795,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865054751}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.4700005, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.3989794, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 4
@@ -13807,7 +13878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873683624}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -13820,9 +13891,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873683623}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.34000134, y: 0.636, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0120306, y: 6.36, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 31
@@ -14237,7 +14308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937149314}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14250,9 +14321,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937149313}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.3800008, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.10764, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 14
@@ -14407,7 +14478,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953674875}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.30999994, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -14483,7 +14554,7 @@ Transform:
   - {fileID: 1003702012}
   - {fileID: 1350517660}
   m_Father: {fileID: 1144322277}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964834079
 GameObject:
@@ -14525,7 +14596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1964965710}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14538,9 +14609,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964965709}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.34000015, y: 0.11599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0120263, y: 1.1599998, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 5
@@ -14560,7 +14631,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979983354}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14573,9 +14644,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979983353}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.30999994, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.92273057, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 0
@@ -14603,7 +14674,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985521970}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6000011, y: 0.376, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -14630,7 +14701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1991408187}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14643,9 +14714,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991408186}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.21000028, y: 0.24599999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6250762, y: 2.46, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 15
@@ -14822,7 +14893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2038260879}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14835,9 +14906,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038260878}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.049999714, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.14882576, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 1
@@ -14926,7 +14997,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038973729}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.60000134, y: 0.636, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -14943,7 +15014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049985519}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -14956,9 +15027,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049985518}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.73000073, y: -0.013999999, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.1728828, y: -0.13999999, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 10
@@ -14973,7 +15044,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2880293087477436386, guid: 33ba4c1f60c91074287f97dff21d2124, type: 3}
   m_PrefabInstance: {fileID: 2880293085510587163}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1371225993}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09d9f4f2644826e4bbdf3c2ce5fe63fe, type: 3}
@@ -15063,7 +15134,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080988731}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2500007, y: -0.013999999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
@@ -15242,7 +15313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097226314}
   m_Layer: 0
-  m_Name: PlaceCastle
+  m_Name: PlaceCastleSecondBot
   m_TagString: PlaceCastleSecondBot
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -15255,9 +15326,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097226313}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.21000099, y: 0.506, z: -0.47500038}
-  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6250775, y: 5.06, z: -2.6783228}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 968770298}
   m_RootOrder: 27
@@ -15350,7 +15421,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &2119218524
 MeshCollider:
@@ -15423,8 +15494,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119218523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0.07, z: -0.2666}
+  m_LocalScale: {x: 2, y: 2, z: 1.9466}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -15513,12 +15584,42 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122400363}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17999983, y: 0.11599999, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
   m_Father: {fileID: 919098187}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2125240295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125240296}
+  m_Layer: 6
+  m_Name: SecondBotCubes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2125240296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125240295}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.9765487, y: 10, z: 5.6385674}
+  m_Children: []
+  m_Father: {fileID: 334068735}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2131343440
 PrefabInstance:
@@ -15731,7 +15832,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138128977}
-  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8600013, y: 0.376, z: -0.47500038}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []

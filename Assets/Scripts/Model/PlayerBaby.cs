@@ -57,7 +57,6 @@ public class PlayerBaby : PlayerBase
     {
         isCry = true;
         _collider.isTrigger = false;
-        Debug.Log("Cry");
         yield return new WaitForSeconds(3);
         isCry = false;
         yield return new WaitForSeconds(0.5f);
