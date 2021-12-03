@@ -83,7 +83,6 @@ public class EnemyBabyBot : EnemyBabyBotBase
         _isCryBot = true;
         _botCollider.isTrigger = false;
         _goBuildCastle = false;
-        Debug.Log("BotCry");
         yield return new WaitForSeconds(_timeCry);
         _isCryBot = false;
         yield return new WaitForSeconds(0.5f);
