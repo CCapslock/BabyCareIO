@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class EnemyBabyBotController : IExecute
 {
     private readonly EnemyBabyBotBase _enemybase;
+    
 
     public EnemyBabyBotController(EnemyBabyBotBase enemy)
     {
@@ -12,7 +9,7 @@ public class EnemyBabyBotController : IExecute
     }
     public void Execute()
     {
-        _enemybase.MoveBot();
+        _enemybase.Execute();
     }
 
     

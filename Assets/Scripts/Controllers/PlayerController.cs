@@ -11,7 +11,11 @@ public class PlayerController : IExecute
     }
     public void Execute()
     {
-        _playerBase.Move(_joystick.Horizontal, 0, _joystick.Vertical);
+        if (!PlayerBase.isCry)
+        {
+            _playerBase.Move(_joystick.Horizontal, 0, _joystick.Vertical);
+        }
+        else { _playerBase.Move(0, 0, 0); }
         _playerBase.BabyAnim();
         _playerBase.RotationMove();
     }

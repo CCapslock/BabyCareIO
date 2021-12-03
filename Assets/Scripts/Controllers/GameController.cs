@@ -9,11 +9,16 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private EnemyBabyBot _babyBot;
     [SerializeField]
+    private SecondEnemyBot _babySecondBot;
+    [SerializeField]
     private Transform _camera;
     private ListExecuteObject _interactiveObject;
     private PlayerController _playerController;
     private CameraController _cameraController;
     private EnemyBabyBotController _botController;
+    private EnenmySecondBabyBotController _secondBotController;
+
+
     private void Awake()
     {
         _interactiveObject = new ListExecuteObject();
@@ -23,6 +28,11 @@ public class GameController : MonoBehaviour
         _interactiveObject.AddExecuteObject(_cameraController);
         _botController = new EnemyBabyBotController(_babyBot);
         _interactiveObject.AddExecuteObject(_botController);
+        _secondBotController = new EnenmySecondBabyBotController(_babySecondBot);
+        _interactiveObject.AddExecuteObject(_secondBotController);
+
+
+
     }
 
     private void FixedUpdate()
