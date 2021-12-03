@@ -15,6 +15,7 @@ public class CustomShadowResolution : MonoBehaviour
 
     [Header("Custom Shadow Resolution V1.0.0")]
     [Header("Note: Higher Shadow Resolution = More GPU RAM Usage.")]
+    [Header("For RealToon Built-In RP Only")]
 
     [Space(10)]
 

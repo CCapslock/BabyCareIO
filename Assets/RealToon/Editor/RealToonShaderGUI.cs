@@ -2278,18 +2278,39 @@ public class RealToonShaderGUI : ShaderGUI
                 materialEditor.ShaderProperty(_N_F_GLOT, new GUIContent(_N_F_GLOT.displayName, TOTIPSEDF[7]));
                 EditorGUILayout.EndVertical();
 
+                EditorGUI.BeginChangeCheck();
+
                 Rect r_ss = EditorGUILayout.BeginVertical("HelpBox");
                 materialEditor.ShaderProperty(_N_F_SS, new GUIContent(_N_F_SS.displayName, TOTIPSEDF[8]));
                 EditorGUILayout.EndVertical();
+
+                if (EditorGUI.EndChangeCheck())
+                {
+                    int f_ss_int = (int)_N_F_SS.floatValue;
+                    foreach (Material m in materialEditor.targets)
+                    {
+                        switch (f_ss_int)
+                        {
+                            case 0:
+                                m.DisableKeyword("N_F_SON_ON");
+                                _N_F_SON.floatValue = 0;
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                }
+
+                EditorGUI.BeginDisabledGroup(_N_F_SS.floatValue == 0);
 
                 Rect r_son = EditorGUILayout.BeginVertical("HelpBox");
                 materialEditor.ShaderProperty(_N_F_SON, new GUIContent(_N_F_SON.displayName, TOTIPSEDF[9]));
                 EditorGUILayout.EndVertical();
 
-                if (_N_F_SS.floatValue == 0)
-                {
-                    _N_F_SON.floatValue = 0;
-                }
+                EditorGUI.EndDisabledGroup();
 
                 Rect r_sct = EditorGUILayout.BeginVertical("HelpBox");
                 materialEditor.ShaderProperty(_N_F_SCT, new GUIContent(_N_F_SCT.displayName, TOTIPSEDF[10]));
