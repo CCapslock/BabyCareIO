@@ -8,6 +8,7 @@ public class PlayerBaby : PlayerBase
     private CapsuleCollider _collider;
     [SerializeField]
     private Joystick _joystick;
+    [SerializeField] Transform _startPointPlayer;
     
 
     private void Awake()
@@ -15,6 +16,7 @@ public class PlayerBaby : PlayerBase
         _collider = GetComponent<CapsuleCollider>();
         _rigidbodyBaby = GetComponent<Rigidbody>();
         _babyAnim = GetComponent<Animator>();
+        StartPoint();
     }
     public override void Move(float x, float y, float z)
     {
@@ -61,5 +63,10 @@ public class PlayerBaby : PlayerBase
         isCry = false;
         yield return new WaitForSeconds(0.5f);
         _collider.isTrigger = true;
+    }
+
+    public override void StartPoint()
+    {
+        transform.position = _startPointPlayer.position;
     }
 }

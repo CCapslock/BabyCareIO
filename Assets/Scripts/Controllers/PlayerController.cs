@@ -11,7 +11,7 @@ public class PlayerController : IExecute
     }
     public void Execute()
     {
-        if (!PlayerBase.isCry)
+        if (!_playerBase.isCry)
         {
             _playerBase.Move(_joystick.Horizontal, 0, _joystick.Vertical);
         }

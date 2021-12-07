@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class Cube : InteractiveObject
 {
@@ -29,6 +30,10 @@ public class Cube : InteractiveObject
 
     private Rigidbody _rigidbodyCubes;
 
+    private EnemyBabyBotBase _firstBot, _secondBot;
+    private PlayerBase _player;
+    private RestartScene _restart;
+
     private bool _isCube = false;
     private bool _isCubeBot = false;
     private bool _isCubeSecondBot = false;
@@ -38,10 +43,7 @@ public class Cube : InteractiveObject
     private float _speedFlyCube = 0.02f;
 
 
-
-
-
-    private void Awake()
+    private void Start()
     {
         PlaceCube.AddRange(GameObject.FindGameObjectsWithTag("PlaceCube"));
         PlaceCastle.AddRange(GameObject.FindGameObjectsWithTag("PlaceCastle"));
@@ -49,17 +51,29 @@ public class Cube : InteractiveObject
         PlaceCastleBot.AddRange(GameObject.FindGameObjectsWithTag("PlaceCastleFirstBot"));
         PlaceCubeSecondBot.AddRange(GameObject.FindGameObjectsWithTag("PlaceCubeSecondBot"));
         PlaceCastleSecondBot.AddRange(GameObject.FindGameObjectsWithTag("PlaceCastleSecondBot"));
+
         _playerBaby = GameObject.Find("Cubes");
         _babyBot = GameObject.Find("CubesBot");
         _babySecondBot = GameObject.Find("CubesSecondBot");
-        _cubes = GameObject.Find("PlaceCastle");
+        _cubes = GameObject.Find("CubeCastle");
         _cubesFirstBot = GameObject.Find("BotCube");
         _cubesSecondBot = GameObject.Find("SecondBotCubes");
         _freeCubes = GameObject.Find("FreeCubes");
         _rigidbodyCubes = GetComponent<Rigidbody>();
+
+        _player = FindObjectOfType<PlayerBase>();
+        _firstBot = FindObjectOfType<EnemyBabyBot>();
+        _secondBot = FindObjectOfType<SecondEnemyBot>();
+
+        _restart = new RestartScene();
     }
-    public override void Execute()
+    public  void Update()
     {
+        
+        if (_cubes.transform.childCount == PlaceCastle.Count)
+        {
+            _player._castleBuiltPlayer = true;
+        }
         if (CastleCube.Count == PlaceCastle.Count)
         {
             _isPlayerTakeCube = false;
@@ -67,20 +81,20 @@ public class Cube : InteractiveObject
         if (CastleCubeBot.Count == PlaceCastleBot.Count)
         {
             _isFirstBotTakeCube = false;
-            EnemyBabyBotBase._goBotTarget = true;
+            _firstBot._goBotTarget = true;
             if (_cubesFirstBot.transform.childCount == PlaceCastleBot.Count)
             {
-                EnemyBabyBotBase._castleBuilt = true;
+                _firstBot._castleBuilt = true;
             }
         }
         if (CastleCubeSecondBot.Count == PlaceCastleSecondBot.Count)
         {
             _isSecondBotTakeCube = false;
-            EnemyBabyBotBase._goBotTargetSecondBot = true;
+            _secondBot._goBotTargetSecondBot = true;
 
             if (_cubesSecondBot.transform.childCount == PlaceCastleSecondBot.Count)
             {
-                EnemyBabyBotBase._castleBuiltSecondBot = true;
+                _secondBot._castleBuiltSecondBot = true;
             }
         }
         if (_isCube == true)
@@ -95,23 +109,23 @@ public class Cube : InteractiveObject
         {
             MoveCubesSecondBot();
         }
-        if (CubeScatterBot.Contains(EnemyBabyBotBase._closest))
+        if (CubeScatterBot.Contains(_firstBot._closest))
         {
-            EnemyBabyBotBase._freeCubes.Remove(EnemyBabyBotBase._closest);
+            EnemyBabyBotBase._freeCubes.Remove(_firstBot._closest);
         }
-        if (CubeScatterSecondBot.Contains(EnemyBabyBotBase._seccondClosest))
+        if (CubeScatterSecondBot.Contains(_secondBot._seccondClosest))
         {
-            EnemyBabyBotBase._freeCubes.Remove(EnemyBabyBotBase._seccondClosest);
+            EnemyBabyBotBase._freeCubes.Remove(_secondBot._seccondClosest);
         }
-        if (PlayerBase.isCry)
+        if (_player.isCry)
         {
             ScatterPlayeer();
         }
-        if (EnemyBabyBotBase._isCryBot)
+        if (_firstBot._isCryBot)
         {
             ScatterBot();
         }
-        if (EnemyBabyBotBase._isCrySecondBot)
+        if (_secondBot._isCrySecondBot)
         {
             ScatterSecondBot();
         }
@@ -128,7 +142,7 @@ public class Cube : InteractiveObject
             _rigidbodyCubes.constraints = RigidbodyConstraints.FreezeAll;
             _playerHaveCube = true;
             EnemyBabyBotBase._freeCubes.Remove(gameObject);
-            PlayerBase._countCube++;
+            _player._countCube++;
             gameObject.transform.tag = "Cube";
             gameObject.transform.SetParent(_playerBaby.transform);
             transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
@@ -137,7 +151,7 @@ public class Cube : InteractiveObject
             {
                 CubeScatterPlayer.Add(_playerBaby.transform.GetChild(i).gameObject);
             }
-            gameObject.transform.position = PlaceCube[PlayerBase._countCube].transform.position;
+            gameObject.transform.position = PlaceCube[_player._countCube].transform.position;
         }
     }
 
@@ -150,8 +164,7 @@ public class Cube : InteractiveObject
         else
         {
             _isCube = true;
-            PlayerBase._countCastlePlace = PlayerBase._countCastlePlace + PlayerBase._countCube;
-            PlayerBase._countCube = 0;
+            _player._countCube = 0;
             transform.rotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             gameObject.transform.SetParent(_cubes.transform);
             for (int i = 0; i < CubeScatterPlayer.Count; i++)
@@ -175,7 +188,7 @@ public class Cube : InteractiveObject
 
             _botHaveCube = true;
             EnemyBabyBotBase._freeCubes.Remove(gameObject);
-            EnemyBabyBotBase._countCubesBot++;
+            _firstBot._countCubesBot++;
             gameObject.transform.tag = "CubeFirstBot";
             CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
             gameObject.transform.SetParent(_babyBot.transform);
@@ -184,21 +197,21 @@ public class Cube : InteractiveObject
             {
                 CubeScatterBot.Add(_babyBot.transform.GetChild(i).gameObject);
             }
-            gameObject.transform.position = PlaceCubeBot[EnemyBabyBotBase._countCubesBot].transform.position;
+            gameObject.transform.position = PlaceCubeBot[_firstBot._countCubesBot].transform.position;
         }
     }
 
     protected override void FirstBotBuildCastle()
     {
-        if (_playerHaveCube||_secondBotHaveCube)
+        if (_playerHaveCube || _secondBotHaveCube)
         {
             return;
         }
         else
         {
             _isCubeBot = true;
-            EnemyBabyBotBase._goBuildCastle = false;
-            EnemyBabyBotBase._countCubesBot = 0;
+            _firstBot._goBuildCastle = false;
+            _firstBot._countCubesBot = 0;
             for (int i = 0; i < CubeScatterBot.Count; i++)
             {
                 CubeScatterBot[i].transform.SetParent(_cubesFirstBot.transform);
@@ -222,7 +235,7 @@ public class Cube : InteractiveObject
             _rigidbodyCubes.constraints = RigidbodyConstraints.FreezeAll;
             _secondBotHaveCube = true;
             EnemyBabyBotBase._freeCubes.Remove(gameObject);
-            EnemyBabyBotBase._countCubesSecondBot++;
+            _secondBot._countCubesSecondBot++;
             gameObject.transform.tag = "CubeSecondBot";
             CastleCubeSecondBot.AddRange(GameObject.FindGameObjectsWithTag("CubeSecondBot"));
             gameObject.transform.SetParent(_babySecondBot.transform);
@@ -231,7 +244,7 @@ public class Cube : InteractiveObject
             {
                 CubeScatterSecondBot.Add(_babySecondBot.transform.GetChild(i).gameObject);
             }
-            gameObject.transform.position = PlaceCubeSecondBot[EnemyBabyBotBase._countCubesSecondBot].transform.position;
+            gameObject.transform.position = PlaceCubeSecondBot[_secondBot._countCubesSecondBot].transform.position;
         }
     }
 
@@ -244,8 +257,8 @@ public class Cube : InteractiveObject
         else
         {
             _isCubeSecondBot = true;
-            EnemyBabyBotBase._goBuildCastleSecondBot = false;
-            EnemyBabyBotBase._countCubesSecondBot = 0;
+            _secondBot._goBuildCastleSecondBot = false;
+            _secondBot._countCubesSecondBot = 0;
             transform.rotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             for (int i = 0; i < CubeScatterSecondBot.Count; i++)
             {
@@ -262,39 +275,65 @@ public class Cube : InteractiveObject
     {
         for (int i = 0; i < CastleCube.Count; i++)
         {
-            CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube[i].transform.position,
+            if (CastleCube[i] != null)
+            {
+                CastleCube[i].transform.position = Vector3.MoveTowards(CastleCube[i].transform.position,
                PlaceCastle[i].transform.position, _speedFlyCube);
+
+                if (CastleCube[CastleCube.IndexOf(gameObject)].transform.position == PlaceCastle[CastleCube.IndexOf(gameObject)].transform.position)
+                {
+                    _isCube = false;
+                }
+            }
+
         }
-        if (CastleCube[CastleCube.IndexOf(gameObject)].transform.position == PlaceCastle[CastleCube.IndexOf(gameObject)].transform.position)
-        {
-            _isCube = false;
-        }
+
+
+
+
     }
     private void MoveCubesFirstBot()
     {
         for (int i = 0; i < CastleCubeBot.Count; i++)
         {
-            CastleCubeBot[i].transform.position = Vector3.MoveTowards(CastleCubeBot[i].transform.position,
+            if (CastleCubeBot[i] != null)
+            {
+                CastleCubeBot[i].transform.position = Vector3.MoveTowards(CastleCubeBot[i].transform.position,
                PlaceCastleBot[i].transform.position, _speedFlyCube);
+
+                if (CastleCubeBot[CastleCubeBot.IndexOf(gameObject)].transform.position == PlaceCastleBot[CastleCubeBot.IndexOf(gameObject)].transform.position)
+                {
+                    _isCubeBot = false;
+                }
+            }
         }
-        if (CastleCubeBot[CastleCubeBot.IndexOf(gameObject)].transform.position == PlaceCastleBot[CastleCubeBot.IndexOf(gameObject)].transform.position)
-        {
-            _isCubeBot = false;
-        }
+
+
+
+
     }
 
     private void MoveCubesSecondBot()
     {
         for (int i = 0; i < CastleCubeSecondBot.Count; i++)
         {
-            CastleCubeSecondBot[i].transform.position = Vector3.MoveTowards(CastleCubeSecondBot[i].transform.position,
+            if (CastleCubeSecondBot[i] != null)
+            {
+                CastleCubeSecondBot[i].transform.position = Vector3.MoveTowards(CastleCubeSecondBot[i].transform.position,
                 PlaceCastleSecondBot[i].transform.position, _speedFlyCube);
+
+                if (CastleCubeSecondBot[CastleCubeSecondBot.IndexOf(gameObject)].transform.position ==
+                           PlaceCastleSecondBot[CastleCubeSecondBot.IndexOf(gameObject)].transform.position)
+                {
+                    _isCubeSecondBot = false;
+                }
+            }
+
         }
-        if (CastleCubeSecondBot[CastleCubeSecondBot.IndexOf(gameObject)].transform.position ==
-                PlaceCastleSecondBot[CastleCubeSecondBot.IndexOf(gameObject)].transform.position)
-        {
-            _isCubeSecondBot = false;
-        }
+
+
+
+
     }
     private void ScatterPlayeer()
     {
@@ -310,7 +349,7 @@ public class Cube : InteractiveObject
                 CubeScatterPlayer[i].transform.SetParent(_freeCubes.transform);
                 CubeScatterPlayer[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 CubeScatterPlayer[i].GetComponent<Cube>()._playerHaveCube = false;
-                PlayerBase._countCube = 0;
+                _player._countCube = 0;
                 EnemyBabyBotBase._freeCubes.Clear();
                 EnemyBabyBotBase._freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
                 EnemyBabyBotBase._freeCubes.Add(CubeScatterPlayer[i]);
@@ -336,14 +375,14 @@ public class Cube : InteractiveObject
                 CubeScatterBot[i].transform.SetParent(_freeCubes.transform);
                 CubeScatterBot[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 CubeScatterBot[i].GetComponent<Cube>()._botHaveCube = false;
-                EnemyBabyBotBase._countCubesBot = 0;
+                _firstBot._countCubesBot = 0;
                 EnemyBabyBotBase._freeCubes.Clear();
                 EnemyBabyBotBase._freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
                 EnemyBabyBotBase._freeCubes.Add(CubeScatterBot[i]);
                 CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
                 _isFirstBotTakeCube = true;
             }
-            EnemyBabyBotBase._goBotTarget = false;
+            _firstBot._goBotTarget = false;
             CubeScatterBot.Clear();
             CastleCubeBot.Clear();
         }
@@ -363,19 +402,28 @@ public class Cube : InteractiveObject
                 CubeScatterSecondBot[i].transform.SetParent(_freeCubes.transform);
                 CubeScatterSecondBot[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 CubeScatterSecondBot[i].GetComponent<Cube>()._secondBotHaveCube = false;
-                EnemyBabyBotBase._countCubesSecondBot = 0;
+                _secondBot._countCubesSecondBot = 0;
                 EnemyBabyBotBase._freeCubes.Clear();
                 EnemyBabyBotBase._freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
                 EnemyBabyBotBase._freeCubes.Add(CubeScatterSecondBot[i]);
                 CastleCubeSecondBot.AddRange(GameObject.FindGameObjectsWithTag("CubeSecondBot"));
                 _isSecondBotTakeCube = true;
             }
-            EnemyBabyBotBase._goBotTargetSecondBot = false;
+            _secondBot._goBotTargetSecondBot = false;
             CubeScatterSecondBot.Clear();
             CastleCubeSecondBot.Clear();
         }
 
     }
 
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(3);
+        //Time.timeScale = 0;
+        CastleCube.Clear();
+        CastleCubeBot.Clear();
+        CastleCubeSecondBot.Clear();
 
+
+    }
 }

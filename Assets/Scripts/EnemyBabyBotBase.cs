@@ -4,32 +4,33 @@ using UnityEngine;
 
 public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
 {
-    public float _speed;
-    public static bool _isCryBot = false;
-    public static bool _isCrySecondBot = false;
-    public static int _countCubesBot;
-    public static int _countCubesSecondBot;
-    public static bool _goBotTarget = false;
-    public static bool _castleBuilt = false;
-    public static bool _castleBuiltSecondBot = false;
-    public static bool _goBotTargetSecondBot = false;
-    public static bool _goBuildCastle = false;
-    public static bool _goBuildCastleSecondBot = false;
+ 
+    public  bool _isCryBot = false;
+    public int _countCubesBot;
+    public bool _goBotTarget = false;
+    public bool _castleBuilt = false;
+    public bool _goBuildCastle = false;
+    public GameObject _closest;
+
+    public  bool _isCrySecondBot = false;
+    public  int _countCubesSecondBot;
+    public  bool _castleBuiltSecondBot = false;
+    public  bool _goBotTargetSecondBot = false;
+    public  bool _goBuildCastleSecondBot = false;
+    public GameObject _seccondClosest;
+
+
     public float _minDistance;
+    public float _timeCry = 3;
+
     public Rigidbody _rigibodyBot;
     public CapsuleCollider _botCollider;
     public Animator _botAnim;
-    public static GameObject _closest;
-    public static GameObject _seccondClosest;
+    public GameObject _startPointBot;
+
+
 
     public static List<GameObject> _freeCubes = new List<GameObject>();
-    
-
-
-    public GameObject _bottarget;
-
-    
-    public float _timeCry = 3;
 
 
     public abstract void Awake();
@@ -43,7 +44,8 @@ public abstract class EnemyBabyBotBase : MonoBehaviour, IExecute
 
     public abstract void Execute();
     public abstract void SecondExecute();
-    
+    public abstract void StartPoint();
+
 
 }
 

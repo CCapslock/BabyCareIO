@@ -11,11 +11,16 @@ public class EnemyBabyBot : EnemyBabyBotBase
     
     public override void Awake()
     {
+       
+    }
+    private void Start()
+    {
         _botCollider = GetComponent<CapsuleCollider>();
         _rigibodyBot = GetComponent<Rigidbody>();
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
         _botAnim = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        StartPoint();
     }
 
     public override void Execute()
@@ -32,8 +37,11 @@ public class EnemyBabyBot : EnemyBabyBotBase
     {
         if (!_isCryBot)
         {
-            _agent.isStopped = false;
+
             FindClosestCube();
+
+            _agent.isStopped = false;
+
             if (!_goBuildCastle && _freeCubes.Contains(_closest) == true)
             {
                 _agent.destination = _closest.transform.position;
@@ -42,7 +50,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
             if (_countCubesBot >= 6 || _goBotTarget)
             {
                 _goBuildCastle = true;
-                _agent.destination = _bottarget.transform.position;
+                _agent.destination = _startPointBot.transform.position;
                 RotateBotTarget();
             }
         }
@@ -90,7 +98,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
     }
     public override void RotateBotTarget()
     {
-        transform.LookAt(_bottarget.transform.position);
+        transform.LookAt(_startPointBot.transform.position);
     }
     public override void RotateCubes()
     {
@@ -101,7 +109,7 @@ public class EnemyBabyBot : EnemyBabyBotBase
 
         if ( _goBotTarget)
         {
-            _closest = _bottarget;
+            _closest = _startPointBot;
 
         }
         else
@@ -109,12 +117,16 @@ public class EnemyBabyBot : EnemyBabyBotBase
             _minDistance = 10000f;
             for (int i = 0; i < _freeCubes.Count; i++)
             {
-                if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
+                if (_freeCubes[i]!=null)
                 {
-                    _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
-                    _closest = _freeCubes[i];
+                    if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
+                    {
+                        _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
+                        _closest = _freeCubes[i];
 
+                    }
                 }
+                
             }
         }
         return _closest;
@@ -123,5 +135,10 @@ public class EnemyBabyBot : EnemyBabyBotBase
     public override void SecondExecute()
     {
         
+    }
+
+    public override void StartPoint()
+    {
+        transform.position = _startPointBot.transform.position;
     }
 }
