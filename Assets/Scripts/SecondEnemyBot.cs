@@ -10,11 +10,16 @@ public class SecondEnemyBot : EnemyBabyBotBase
     private NavMeshAgent _agent;
     public override void Awake()
     {
+        
+    }
+    private void Start()
+    {
         _botCollider = GetComponent<CapsuleCollider>();
         _rigibodyBot = GetComponent<Rigidbody>();
         _botAnim = GetComponent<Animator>();
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
         _agent = GetComponent<NavMeshAgent>();
+        StartPoint();
     }
 
     public override void SecondExecute()
@@ -31,17 +36,21 @@ public class SecondEnemyBot : EnemyBabyBotBase
     {
         if (_goBotTargetSecondBot)
         {
-            _seccondClosest = _bottarget;
+            _seccondClosest = _startPointBot;
 
         }
         _minDistance = 10000f;
         for (int i = 0; i < _freeCubes.Count; i++)
         {
-            if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
+            if (_freeCubes[i]!=null)
             {
-                _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
-                _seccondClosest = _freeCubes[i];
+                if (_minDistance > Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position))
+                {
+                    _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
+                    _seccondClosest = _freeCubes[i];
+                }
             }
+            
         }
         return _seccondClosest;
     }
@@ -60,7 +69,7 @@ public class SecondEnemyBot : EnemyBabyBotBase
             if (_countCubesSecondBot >= 6 ||_goBotTargetSecondBot)
             {
                 _goBuildCastleSecondBot = true;
-                _agent.destination = _bottarget.transform.position;
+                _agent.destination = _startPointBot.transform.position;
                 RotateBotTarget();
             }
         }
@@ -100,7 +109,7 @@ public class SecondEnemyBot : EnemyBabyBotBase
 
     public override void RotateBotTarget()
     {
-        transform.LookAt(_bottarget.transform.position);
+        transform.LookAt(_startPointBot.transform.position);
     }
     public override void RotateCubes()
     {
@@ -121,5 +130,10 @@ public class SecondEnemyBot : EnemyBabyBotBase
     public override void Execute()
     {
         
+    }
+
+    public override void StartPoint()
+    {
+        transform.position = _startPointBot.transform.position;
     }
 }

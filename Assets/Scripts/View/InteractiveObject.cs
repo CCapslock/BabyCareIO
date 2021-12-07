@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InteractiveObject : MonoBehaviour, IExecute
+public abstract class InteractiveObject : MonoBehaviour
 {
     public static bool _isPlayerTakeCube = true;
     public static bool _isFirstBotTakeCube = true;
     public static bool _isSecondBotTakeCube = true;
-    
+
 
     protected abstract void PlayerTakesCube();
     protected abstract void PlayerBuildCastle();
@@ -25,7 +25,8 @@ public abstract class InteractiveObject : MonoBehaviour, IExecute
             }
             PlayerTakesCube();
 
-        } else if (other.CompareTag("PlacePlayer"))
+        }
+        else if (other.CompareTag("PlacePlayer"))
         {
             PlayerBuildCastle();
         }
@@ -48,11 +49,12 @@ public abstract class InteractiveObject : MonoBehaviour, IExecute
                 return;
             }
             SecondBotTakesCube();
-        } else if (other.CompareTag("PlaceSecondBot"))
+        }
+        else if (other.CompareTag("PlaceSecondBot"))
         {
             SecondBotBuildCastle();
         }
     }
-    public abstract void Execute();
 
+    
 }
