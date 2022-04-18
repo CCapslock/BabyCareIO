@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour
     private PlayerController _playerController;
     private CameraController _cameraController;
     private EnemyBabyBotController _botController;
-    private EnenmySecondBabyBotController _secondBotController;
+    private EnemySecondBabyBotController _secondBotController;
 
 
     private void Awake()
@@ -28,11 +28,8 @@ public class GameController : MonoBehaviour
         _interactiveObject.AddExecuteObject(_cameraController);
         _botController = new EnemyBabyBotController(_babyBot);
         _interactiveObject.AddExecuteObject(_botController);
-        _secondBotController = new EnenmySecondBabyBotController(_babySecondBot);
+        _secondBotController = new EnemySecondBabyBotController(_babySecondBot);
         _interactiveObject.AddExecuteObject(_secondBotController);
-
-
-
     }
 
     private void FixedUpdate()
@@ -47,6 +44,5 @@ public class GameController : MonoBehaviour
             }
             interactiveObject.Execute();
         }
-
     }
 }
