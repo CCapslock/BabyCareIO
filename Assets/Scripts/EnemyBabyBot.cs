@@ -16,6 +16,10 @@ public class EnemyBabyBot : EnemyBabyBotBase
         _freeCubes.AddRange(GameObject.FindGameObjectsWithTag("FreeCube"));
         _botAnim = GetComponent<Animator>();
         _agent = GetComponent<NavMeshAgent>();
+        isIdle = true;
+        isCry = false;
+        isClap = false;
+        isWalk = false;
     }
 
     public override void Execute()
@@ -26,11 +30,10 @@ public class EnemyBabyBot : EnemyBabyBotBase
 
             AnimBot();
         }
-        
     }
     public override void MoveBot()
     {
-        if (!_isCryBot)
+        if (!isCry)
         {
             _agent.isStopped = false;
             FindClosestCube();
@@ -53,41 +56,74 @@ public class EnemyBabyBot : EnemyBabyBotBase
     }
     public override void AnimBot()
     {
-        if (!_isCryBot)
+        if (isIdle)
         {
-            _botAnim.SetBool("Walk", true);
+            _botAnim.SetBool("Idle", true);
+            _botAnim.SetBool("Clap", false);
+            _botAnim.SetBool("Walk", false);
+            _botAnim.SetBool("Cry", false);
         }
-        else
+        
+        if (isCry)
         {
+            _botAnim.SetBool("Idle", false);
+            _botAnim.SetBool("Clap", false);
             _botAnim.SetBool("Walk", false);
             _botAnim.SetBool("Cry", true);
         }
-        
-        if (_goBotTarget && _castleBuilt)
+
+        if (isClap)
         {
-             transform.Rotate(Vector3.up);
+            _botAnim.SetBool("Idle", false);
             _botAnim.SetBool("Clap", true);
-            _agent.isStopped = true;
+            _botAnim.SetBool("Walk", false);
+            _botAnim.SetBool("Cry",false);
+        }
+
+        if (isWalk)
+        {
+            _botAnim.SetBool("Idle", false);
+            _botAnim.SetBool("Clap", false);
+            _botAnim.SetBool("Cry",false);
+            _botAnim.SetBool("Walk", true);
         }
     }
-    public override void OnTriggerEnter(Collider other)
+    
+    /*public override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")|| other.CompareTag("SecondEnemyBabyBot"))
+        if (other.CompareTag("Player") || other.CompareTag("SecondEnemyBabyBot"))
         {
             StartCoroutine(TimeCryBot());
         }
-    }
+    }*/
 
-    public override IEnumerator TimeCryBot()
+    public static IEnumerator TimeCryBot()
     {
-        _isCryBot = true;
+        isIdle = false;
+        isWalk = false;
+        isCry = true;
+        isClap =false;
         _botCollider.isTrigger = false;
         _goBuildCastle = false;
         yield return new WaitForSeconds(_timeCry);
-        _isCryBot = false;
+        isCry = false;
         yield return new WaitForSeconds(0.5f);
         _botCollider.isTrigger = true;
     }
+    
+    public static IEnumerator TimeClapBot()
+    {
+        isIdle = false;
+        isWalk = false;
+        isCry = false;
+        isClap = true;
+        _botCollider.isTrigger = false;
+        yield return new WaitForSeconds(_timeCry);
+        isClap = false;
+        yield return new WaitForSeconds(0.5f);
+        _botCollider.isTrigger = true;
+    }
+    
     public override void RotateBotTarget()
     {
         transform.LookAt(_bottarget.transform.position);
@@ -102,7 +138,6 @@ public class EnemyBabyBot : EnemyBabyBotBase
         if ( _goBotTarget)
         {
             _closest = _bottarget;
-
         }
         else
         {
@@ -113,7 +148,6 @@ public class EnemyBabyBot : EnemyBabyBotBase
                 {
                     _minDistance = Vector3.Distance(gameObject.transform.position, _freeCubes[i].transform.position);
                     _closest = _freeCubes[i];
-
                 }
             }
         }

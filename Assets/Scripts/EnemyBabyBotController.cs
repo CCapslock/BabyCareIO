@@ -2,7 +2,6 @@ public class EnemyBabyBotController : IExecute
 {
     private readonly EnemyBabyBotBase _enemybase;
     
-
     public EnemyBabyBotController(EnemyBabyBotBase enemy)
     {
         _enemybase = enemy;
@@ -11,7 +10,4 @@ public class EnemyBabyBotController : IExecute
     {
         _enemybase.Execute();
     }
-
-    
-    
 }
