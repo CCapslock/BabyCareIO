@@ -151,6 +151,18 @@ public class SecondEnemyBot : EnemyBabyBotBase
         _botCollider.isTrigger = true;
         _agent.isStopped = false;
     }
+    
+    public static IEnumerator TimeIdleSecondBot()
+    {
+        isClap = true;
+        _botCollider.isTrigger = false;
+        _agent.isStopped = true;
+        yield return new WaitForSeconds(_timeCry);
+        isClap = false;
+        yield return new WaitForSeconds(0.5f);
+        _botCollider.isTrigger = true;
+        _agent.isStopped = false;
+    }
 
     public override void Execute()
     {

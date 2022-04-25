@@ -124,6 +124,19 @@ public class EnemyBabyBot : EnemyBabyBotBase
         _botCollider.isTrigger = true;
     }
     
+    public static IEnumerator TimeIdleBot()
+    {
+        isIdle = true;
+        isWalk = false;
+        isCry = false;
+        isClap = false;
+        _botCollider.isTrigger = false;
+        yield return new WaitForSeconds(_timeCry);
+        isIdle = false;
+        yield return new WaitForSeconds(0.5f);
+        _botCollider.isTrigger = true;
+    }
+    
     public override void RotateBotTarget()
     {
         transform.LookAt(_bottarget.transform.position);

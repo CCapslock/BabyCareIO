@@ -51,15 +51,16 @@ public class PlayerBaby : PlayerBase
             _babyAnim.SetBool("Cry",false);
         }
 
-        if (isWalk)
+        if (!isWalk)
         {
-            _babyAnim.SetBool("Idle", false);
-            _babyAnim.SetBool("Clap", false);
-            _babyAnim.SetBool("Cry",false);
-            if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
-            {
-                _babyAnim.SetBool("Walk", true);
-            }
+            return;
+        }
+        _babyAnim.SetBool("Idle", false);
+        _babyAnim.SetBool("Clap", false);
+        _babyAnim.SetBool("Cry",false);
+        if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        {
+            _babyAnim.SetBool("Walk", true);
         }
         
         /*if (!isCry)
@@ -122,6 +123,19 @@ public class PlayerBaby : PlayerBase
         _collider.isTrigger = false;
         yield return new WaitForSeconds(3);
         isClap = false;
+        yield return new WaitForSeconds(0.5f);
+        _collider.isTrigger = true;
+    }
+    
+    public static IEnumerator TimeIdle()
+    {
+        isIdle = true;
+        isWalk = false;
+        isCry = false;
+        isClap = false;
+        _collider.isTrigger = false;
+        yield return new WaitForSeconds(3);
+        isIdle = false;
         yield return new WaitForSeconds(0.5f);
         _collider.isTrigger = true;
     }

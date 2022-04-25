@@ -105,7 +105,7 @@ public class Cube : InteractiveObject
         }
         if (PlayerBase.isCry)
         {
-            ScatterPlayeer();
+            ScatterPlayer();
         }
         if (EnemyBabyBotBase.isCry)
         {
@@ -299,7 +299,7 @@ public class Cube : InteractiveObject
             _isCubeSecondBot = false;
         }
     }
-    private void ScatterPlayeer()
+    private void ScatterPlayer()
     {
         if (CubeScatterPlayer.Count <= 0)
         {
@@ -377,8 +377,5 @@ public class Cube : InteractiveObject
             CubeScatterSecondBot.Clear();
             CastleCubeSecondBot.Clear();
         }
-
     }
-
-
 }
