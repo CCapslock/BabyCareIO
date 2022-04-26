@@ -13,7 +13,27 @@ namespace Model
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("FirstBotFront") || other.CompareTag("SecondBotFront"))
+            switch (other.tag)
+            {
+                case "FirstBotFront":
+                    StartCoroutine(PlayerBaby.TimeIdle());
+                    Debug.Log($"PlayerFront -> FirstBotFront");
+                    return;
+                case "SecondBotFront":
+                    StartCoroutine(PlayerBaby.TimeIdle());
+                    Debug.Log($"PlayerFront -> SecondBotFront");
+                    return;
+                case "FirstBotBack":
+                    StartCoroutine(PlayerBaby.TimeClap());
+                    Debug.Log($"PlayerFront -> FirstBotBack");
+                    return;
+                case "SecondBotBack":
+                    StartCoroutine(PlayerBaby.TimeClap());
+                    Debug.Log($"PlayerFront -> SecondBotBack");
+                    return;
+            }
+            
+            /*if (other.CompareTag("FirstBotFront") || other.CompareTag("SecondBotFront"))
             {
                 StartCoroutine(PlayerBaby.TimeClap());
                 Debug.Log($"PlayerFront -> FirstBotFront || SecondBotFront");
@@ -23,7 +43,7 @@ namespace Model
             {
                 StartCoroutine(PlayerBaby.TimeClap());
                 Debug.Log($"PlayerFront -> FirstBotBack || SecondBotBack");
-            }
+            }*/
         }
     }
 }
