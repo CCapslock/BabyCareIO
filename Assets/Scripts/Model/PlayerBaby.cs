@@ -8,7 +8,12 @@ public class PlayerBaby : PlayerBase
     private static CapsuleCollider _collider;
     [SerializeField]
     private Joystick _joystick;
-    
+
+    private static readonly int Idle = Animator.StringToHash("Idle");
+    private static readonly int Clap = Animator.StringToHash("Clap");
+    private static readonly int Cry = Animator.StringToHash("Cry");
+    private static readonly int Walk = Animator.StringToHash("Walk");
+
 
     private void Awake()
     {
@@ -28,39 +33,39 @@ public class PlayerBaby : PlayerBase
     {
         if (isIdle)
         {
-            _babyAnim.SetBool("Clap", false);
-            _babyAnim.SetBool("Walk", false);
-            _babyAnim.SetBool("Cry", false);
+            _babyAnim.SetBool(Clap, false);
+            _babyAnim.SetBool(Walk, false);
+            _babyAnim.SetBool(Cry, false);
             if (_joystick.Horizontal == 0 || _joystick.Vertical == 0)
-                _babyAnim.SetBool("Idle", true);
+                _babyAnim.SetBool(Idle, true);
         }
         
         if (isCry)
         {
-            _babyAnim.SetBool("Idle", false);
-            _babyAnim.SetBool("Clap", false);
-            _babyAnim.SetBool("Walk", false);
-            _babyAnim.SetBool("Cry", true);
+            _babyAnim.SetBool(Idle, false);
+            _babyAnim.SetBool(Clap, false);
+            _babyAnim.SetBool(Walk, false);
+            _babyAnim.SetBool(Cry, true);
         }
 
         if (isClap)
         {
-            _babyAnim.SetBool("Idle", false);
-            _babyAnim.SetBool("Clap", true);
-            _babyAnim.SetBool("Walk", false);
-            _babyAnim.SetBool("Cry",false);
+            _babyAnim.SetBool(Idle, false);
+            _babyAnim.SetBool(Clap, true);
+            _babyAnim.SetBool(Walk, false);
+            _babyAnim.SetBool(Cry,false);
         }
 
         if (!isWalk)
         {
             return;
         }
-        _babyAnim.SetBool("Idle", false);
-        _babyAnim.SetBool("Clap", false);
-        _babyAnim.SetBool("Cry",false);
+        _babyAnim.SetBool(Idle, false);
+        _babyAnim.SetBool(Clap, false);
+        _babyAnim.SetBool(Cry,false);
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            _babyAnim.SetBool("Walk", true);
+            _babyAnim.SetBool(Walk, true);
         }
         
         /*if (!isCry)
