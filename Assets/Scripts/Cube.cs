@@ -105,9 +105,9 @@ public class Cube : InteractiveObject
         }
         if (PlayerBase.isCry)
         {
-            ScatterPlayeer();
+            ScatterPlayer();
         }
-        if (EnemyBabyBotBase._isCryBot)
+        if (EnemyBabyBotBase.isCry)
         {
             ScatterBot();
         }
@@ -131,7 +131,8 @@ public class Cube : InteractiveObject
             PlayerBase._countCube++;
             gameObject.transform.tag = "Cube";
             gameObject.transform.SetParent(_playerBaby.transform);
-            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
+            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], 
+                _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             CastleCube.AddRange(GameObject.FindGameObjectsWithTag("Cube"));
             for (int i = 0; i < _playerBaby.transform.childCount; i++)
             {
@@ -179,7 +180,8 @@ public class Cube : InteractiveObject
             gameObject.transform.tag = "CubeFirstBot";
             CastleCubeBot.AddRange(GameObject.FindGameObjectsWithTag("CubeFirstBot"));
             gameObject.transform.SetParent(_babyBot.transform);
-            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
+            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], 
+                _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             for (int i = 0; i < _babyBot.transform.childCount; i++)
             {
                 CubeScatterBot.Add(_babyBot.transform.GetChild(i).gameObject);
@@ -226,7 +228,8 @@ public class Cube : InteractiveObject
             gameObject.transform.tag = "CubeSecondBot";
             CastleCubeSecondBot.AddRange(GameObject.FindGameObjectsWithTag("CubeSecondBot"));
             gameObject.transform.SetParent(_babySecondBot.transform);
-            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
+            transform.localRotation = Quaternion.Euler(_anglerotationCube[Random.Range(0, 3)], 
+                _anglerotationCube[Random.Range(0, 3)], _anglerotationCube[Random.Range(0, 3)]);
             for (int i = 0; i < _babySecondBot.transform.childCount; i++)
             {
                 CubeScatterSecondBot.Add(_babySecondBot.transform.GetChild(i).gameObject);
@@ -296,7 +299,7 @@ public class Cube : InteractiveObject
             _isCubeSecondBot = false;
         }
     }
-    private void ScatterPlayeer()
+    private void ScatterPlayer()
     {
         if (CubeScatterPlayer.Count <= 0)
         {
@@ -374,8 +377,5 @@ public class Cube : InteractiveObject
             CubeScatterSecondBot.Clear();
             CastleCubeSecondBot.Clear();
         }
-
     }
-
-
 }

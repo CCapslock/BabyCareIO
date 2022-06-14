@@ -24,8 +24,8 @@ public abstract class InteractiveObject : MonoBehaviour, IExecute
                 return;
             }
             PlayerTakesCube();
-
-        } else if (other.CompareTag("PlacePlayer"))
+        }
+        else if (other.CompareTag("PlacePlayer"))
         {
             PlayerBuildCastle();
         }
@@ -48,7 +48,8 @@ public abstract class InteractiveObject : MonoBehaviour, IExecute
                 return;
             }
             SecondBotTakesCube();
-        } else if (other.CompareTag("PlaceSecondBot"))
+        }
+        else if (other.CompareTag("PlaceSecondBot"))
         {
             SecondBotBuildCastle();
         }

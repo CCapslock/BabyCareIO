@@ -25,6 +25,12 @@ TagManager:
   - PlaceSecondBot
   - PlaceCastleSecondBot
   - CubeSecondBot
+  - PlayerFront
+  - PlayerBack
+  - FirstBotFront
+  - FirstBotBack
+  - SecondBotBack
+  - SecondBotFront
   layers:
   - Default
   - TransparentFX
